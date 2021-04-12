@@ -20,9 +20,6 @@ if __name__ == '__main__':
 
     change(trans_usa,trans_uae,trans_jap,trans_chi)
 
-
-
-
     print("달러의 최소한 화폐 수는"++ "입니다.  ")
     print("유로의 최소한 화폐 수는 "+ + "입니다.  ")
     print("엔의 최소한 화폐 수는 "+ + "입니다.  ")
