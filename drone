@@ -1,3 +1,51 @@
+#최소한의 화폐로 환전했을때 몇장(개)의 화폐가 필요한지 출력하는 프로그램을 작성
+
+class change_class:
+    def change(self, usa, uae, jap, chi):
+
+        usa_kind = [100, 50, 20, 10, 5, 1, 0.5, 0.25, 0.1, 0.05, 0.01]
+        usa_re = list()
+        for i in usa_kind:
+            usa_re.append(usa // i)
+            usa = usa % i
+
+
+
+        uae_kind = [500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+        uae_re = list()
+        for i in uae_kind:
+            uae_re.append(uae // i)
+            uae = uae % i
+
+        jap_kind = [10000, 5000, 2000, 1000, 500, 100, 50, 10, 5, 1]
+        jap_re = list()
+        for i in jap_kind:
+            jap_re.append(jap // i)
+            jap = jap % i
+
+        chi_kind = [100, 50, 20, 10, 5, 1, 0.5, 0.1]
+        chi_re = list()
+        for i in chi_kind:
+            chi_re.append(chi // i)
+            chi = chi % i
+
+        # total = [usa_re, uae_re, jap_re, chi_re]
+
+
+        print('달러',usa_re)
+        print('유로',uae_re)
+        print('엔화',jap_re)
+        print('위안',chi_re)
+
+
+
+        print('달러의 최소 개수 : ',sum(usa_re))
+        print('유로의 최소 개수 : ',sum(uae_re))
+        print('엔화의 최소 개수 : ',sum(jap_re))
+        print('위안의 최소 개수 : ',sum(chi_re))
+
+        # return total
+
 if __name__ == '__main__':
 
     T = change_class()
