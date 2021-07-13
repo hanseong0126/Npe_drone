@@ -69,7 +69,7 @@ bi_blue = blue_hsv(image)
 	center_x1 = int((min_x1 + max_x1) / 2)
 	center_y1 = int((min_y1 + max_y1) / 2)
 ```
-사각형의 중점을 찾은 모습    
+사각형의 중점을 찾은 모습      
 <img width="300" height="300" alt="33443" src="https://user-images.githubusercontent.com/54049385/125278881-37ea7a80-e34e-11eb-97d7-7fdd60633c5d.jpg">
 <img width="300" height="300" alt="33443" src="https://user-images.githubusercontent.com/54049385/125278642-f1951b80-e34d-11eb-96d0-64c201d2cae5.PNG">
 
@@ -92,12 +92,14 @@ if bi_blue[center_y1][i] == 255 and i > center_max_x:
 center_x2 = int((center_min_x + center_max_x) / 2)
 center_y2 = int((center_min_y + center_max_y) / 2)
 ```
-원의 중점에서 나아가 경계에서 선이 멈춘것을 확인 할 수 있다.  
+원의 중점에서 나아가 경계에서 선이 멈춘것을 확인 할 수 있다.    
 <img width="300" height="300" alt="123123" src="https://user-images.githubusercontent.com/54049385/125280065-9bc17300-e34f-11eb-8a85-52ebd1c74d77.PNG">
 
 
 
-
-##### 드론제어 중 이상적인 범위에서 벗어날 경우 대비법이다.
-
+------------------------------------------------------
+##### 아래는 드론제어 중 이상적인 범위에서 벗어날 경우 대비법이다.  
+- 화면상에 링이 전부 보이지 않아 실제 원의 중점과는 다른 곳이 중점으로 인식되었다.  
+   
+<img width="300" height = "300" alt="img6" src="https://user-images.githubusercontent.com/54049385/125398600-7afa2b80-e3ea-11eb-91f5-13743130e6e8.PNG"><img width="300" height = "300" alt="3423432" src="https://user-images.githubusercontent.com/54049385/125398658-906f5580-e3ea-11eb-8f01-9cae5ba75585.PNG">
  
