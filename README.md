@@ -121,7 +121,6 @@ if max_x1_red - min_x1_red < 25:
 - 표식이 일정크기 이상으로 보일 경우 다음 행동을 수행한다.
 ```python
 else:
-	
 	sleep(2)
 	drone.sendControlPosition16(0, 0, 0, 0, 90, 20)
 	sleep(4)
@@ -145,10 +144,7 @@ def blue_hsv(image):
     img_th = inRange(image_hsv, th_low, th_high)
     return img_th
 ```
-
-
-
- 
+------------------------------------------------------
 
 >위와 같은 영상처리를 통해 정확도 높은 영상처리 및 드론제어를 구현하였고,  
 목표지점에 성공적으로 도달하는것을 확인하였다. 
