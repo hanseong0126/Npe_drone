@@ -107,8 +107,48 @@ center_y2 = int((center_min_y + center_max_y) / 2)
  다음 사진은 rad_up이 rad_down보다 긴 상황이므로 드론의 움직임을 위로 제어한다.  
 <img width="430" alt="234324324" src="https://user-images.githubusercontent.com/54049385/125404839-1347de80-e3f2-11eb-9435-4c61f60796b8.png">  
 
- 
-```  
-위와 같은 영상처리를 통해 정확도 높은 영상처리 및 드론제어를 구현하였고,  
-목표지점에 성공적으로 도달하는것을 확인하였다. 
+
+
+------------------------------------------------------
+##### 다음으로 표식이 보이지 않을 경우 대비법이다.
+- 이동 후 표식이 보이지 않을 경우 표식이 보일때까지 전진한다.
+```python
+if max_x1_red - min_x1_red < 25:
+	sleep(2)
+	drone.sendControlPosition16(1, 0, 0, 5, 0, 0)
+	red_find = 1
 ```
+- 표식이 일정크기 이상으로 보일 경우 다음 행동을 수행한다.
+```python
+else:
+	
+	sleep(2)
+	drone.sendControlPosition16(0, 0, 0, 0, 90, 20)
+	sleep(4)
+	drone.sendControlPosition16(10, 0, 0, 6, 0, 0)
+	sleep(4)
+	picam.capture(output=f + ".jpg")
+	drone.sendControlPosition16(0, 0, 2, 5, 0, 0)
+	sleep(2)
+```
+
+
+
+------------------------------------------------------
+##### 보라색 표식 찾기
+- 마지막 링에서 보라색 표식을 확인하여 착륙하여야 하므로 보라색도 빨간색과 같이 HSV를 이용하여 판단한다.
+```python
+def blue_hsv(image):
+    image_hsv = cvtColor(image, COLOR_BGR2HSV)
+    th_low = (90, 80, 70)
+    th_high = (120, 255, 255)
+    img_th = inRange(image_hsv, th_low, th_high)
+    return img_th
+```
+
+
+
+ 
+
+>위와 같은 영상처리를 통해 정확도 높은 영상처리 및 드론제어를 구현하였고,  
+목표지점에 성공적으로 도달하는것을 확인하였다. 
