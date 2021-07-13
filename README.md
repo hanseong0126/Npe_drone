@@ -126,7 +126,6 @@ else:
 	sleep(4)
 	drone.sendControlPosition16(10, 0, 0, 6, 0, 0)
 	sleep(4)
-	picam.capture(output=f + ".jpg")
 	drone.sendControlPosition16(0, 0, 2, 5, 0, 0)
 	sleep(2)
 ```
