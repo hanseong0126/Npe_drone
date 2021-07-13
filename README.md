@@ -103,3 +103,6 @@ center_y2 = int((center_min_y + center_max_y) / 2)
    
 <img width="300" height = "300" alt="img6" src="https://user-images.githubusercontent.com/54049385/125398600-7afa2b80-e3ea-11eb-91f5-13743130e6e8.PNG"><img width="300" height = "300" alt="3423432" src="https://user-images.githubusercontent.com/54049385/125398658-906f5580-e3ea-11eb-8f01-9cae5ba75585.PNG">
  
+ - 이때, 중점이라 인식한 지점에서부터 상하좌우로 직선을 그었을때의 직선길이를 비교한다.   
+ 다음 사진은 rad_up이 rad_down보다 긴 상황이므로 드론의 움직임을 위로 제어한다.  
+<img width="430" alt="234324324" src="https://user-images.githubusercontent.com/54049385/125404839-1347de80-e3f2-11eb-9435-4c61f60796b8.png">
