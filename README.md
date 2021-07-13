@@ -87,7 +87,8 @@ for i in range(center_x1, max_x1):
 if bi_blue[center_y1][i] == 255 and i > center_max_x:
     center_max_x = i
     break              
-#원의 경계부분의 연산을 통해 더 정확한 중점을 찾는다. 
+#원의 경계부분의 연산을 통해 더 정확한 중점을 찾는다.  
+#상하좌우 동일 하게 수행 
 center_x2 = int((center_min_x + center_max_x) / 2)
 center_y2 = int((center_min_y + center_max_y) / 2)
 ```
@@ -96,5 +97,7 @@ center_y2 = int((center_min_y + center_max_y) / 2)
 
 
 
+
+##### 드론제어 중 이상적인 범위에서 벗어날 경우 대비법이다.
 
  
